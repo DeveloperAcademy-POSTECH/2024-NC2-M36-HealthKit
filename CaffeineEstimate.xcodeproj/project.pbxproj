@@ -12,6 +12,7 @@
 		421291442C1FD049009676D4 /* Colorsets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 421291432C1FD049009676D4 /* Colorsets.xcassets */; };
 		421291492C1FD4AB009676D4 /* Cafe24Syongsyong-v2.0.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 421291482C1FD4AB009676D4 /* Cafe24Syongsyong-v2.0.ttf */; };
 		4212914B2C1FD55B009676D4 /* GrandifloraOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4212914A2C1FD55B009676D4 /* GrandifloraOne-Regular.ttf */; };
+		4212914D2C1FDD4E009676D4 /* homeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212914C2C1FDD4E009676D4 /* homeView.swift */; };
 		423644312C1968B000AB0902 /* CaffeineEstimateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423644302C1968B000AB0902 /* CaffeineEstimateApp.swift */; };
 		423644332C1968B000AB0902 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423644322C1968B000AB0902 /* ContentView.swift */; };
 		423644352C1968B100AB0902 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 423644342C1968B100AB0902 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		421291432C1FD049009676D4 /* Colorsets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colorsets.xcassets; sourceTree = "<group>"; };
 		421291482C1FD4AB009676D4 /* Cafe24Syongsyong-v2.0.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cafe24Syongsyong-v2.0.ttf"; sourceTree = "<group>"; };
 		4212914A2C1FD55B009676D4 /* GrandifloraOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GrandifloraOne-Regular.ttf"; sourceTree = "<group>"; };
+		4212914C2C1FDD4E009676D4 /* homeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeView.swift; sourceTree = "<group>"; };
 		4236442D2C1968B000AB0902 /* CaffeineEstimate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaffeineEstimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		423644302C1968B000AB0902 /* CaffeineEstimateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeineEstimateApp.swift; sourceTree = "<group>"; };
 		423644322C1968B000AB0902 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -94,8 +96,16 @@
 			children = (
 				423644322C1968B000AB0902 /* ContentView.swift */,
 				421291322C1FC333009676D4 /* SplashView.swift */,
+				4212914C2C1FDD4E009676D4 /* homeView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		4212914F2C1FE339009676D4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		423644242C1968B000AB0902 = {
@@ -120,6 +130,7 @@
 				423644412C197FDD00AB0902 /* CaffeineEstimate.entitlements */,
 				423644402C197E2200AB0902 /* Info.plist */,
 				4212913E2C1FCB92009676D4 /* App */,
+				4212914F2C1FE339009676D4 /* Data */,
 				4212913F2C1FCBAE009676D4 /* Manager */,
 				421291402C1FCBC6009676D4 /* View */,
 				421291392C1FC6CC009676D4 /* Helper */,
@@ -215,6 +226,7 @@
 				4212913B2C1FC6EC009676D4 /* Helper+CustomFont.swift in Sources */,
 				423644432C1982AC00AB0902 /* HealthManager.swift in Sources */,
 				423644312C1968B000AB0902 /* CaffeineEstimateApp.swift in Sources */,
+				4212914D2C1FDD4E009676D4 /* homeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

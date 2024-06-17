@@ -13,7 +13,7 @@ struct CaffeineEstimateApp: App {
     
     var body: some Scene {
         WindowGroup {
-            SplashView()
+            homeView()
                 .environmentObject(manager)
         }
     }
