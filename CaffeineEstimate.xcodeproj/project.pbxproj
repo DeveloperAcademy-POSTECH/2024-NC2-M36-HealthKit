@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		421291332C1FC333009676D4 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421291322C1FC333009676D4 /* SplashView.swift */; };
+		4212913B2C1FC6EC009676D4 /* Helper+CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212913A2C1FC6EC009676D4 /* Helper+CustomFont.swift */; };
+		421291442C1FD049009676D4 /* Colorsets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 421291432C1FD049009676D4 /* Colorsets.xcassets */; };
+		421291492C1FD4AB009676D4 /* Cafe24Syongsyong-v2.0.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 421291482C1FD4AB009676D4 /* Cafe24Syongsyong-v2.0.ttf */; };
+		4212914B2C1FD55B009676D4 /* GrandifloraOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4212914A2C1FD55B009676D4 /* GrandifloraOne-Regular.ttf */; };
 		423644312C1968B000AB0902 /* CaffeineEstimateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423644302C1968B000AB0902 /* CaffeineEstimateApp.swift */; };
 		423644332C1968B000AB0902 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423644322C1968B000AB0902 /* ContentView.swift */; };
 		423644352C1968B100AB0902 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 423644342C1968B100AB0902 /* Assets.xcassets */; };
@@ -15,12 +20,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		421291322C1FC333009676D4 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		4212913A2C1FC6EC009676D4 /* Helper+CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+CustomFont.swift"; sourceTree = "<group>"; };
+		421291432C1FD049009676D4 /* Colorsets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colorsets.xcassets; sourceTree = "<group>"; };
+		421291482C1FD4AB009676D4 /* Cafe24Syongsyong-v2.0.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cafe24Syongsyong-v2.0.ttf"; sourceTree = "<group>"; };
+		4212914A2C1FD55B009676D4 /* GrandifloraOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GrandifloraOne-Regular.ttf"; sourceTree = "<group>"; };
 		4236442D2C1968B000AB0902 /* CaffeineEstimate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaffeineEstimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		423644302C1968B000AB0902 /* CaffeineEstimateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeineEstimateApp.swift; sourceTree = "<group>"; };
 		423644322C1968B000AB0902 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		423644342C1968B100AB0902 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		423644372C1968B100AB0902 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		423644402C197E2200AB0902 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		423644402C197E2200AB0902 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		423644412C197FDD00AB0902 /* CaffeineEstimate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CaffeineEstimate.entitlements; sourceTree = "<group>"; };
 		423644422C1982AC00AB0902 /* HealthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -36,6 +46,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		421291342C1FC5BE009676D4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				421291372C1FC5F7009676D4 /* Fonts */,
+				423644342C1968B100AB0902 /* Assets.xcassets */,
+				421291432C1FD049009676D4 /* Colorsets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		421291372C1FC5F7009676D4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4212914A2C1FD55B009676D4 /* GrandifloraOne-Regular.ttf */,
+				421291482C1FD4AB009676D4 /* Cafe24Syongsyong-v2.0.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		421291392C1FC6CC009676D4 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				4212913A2C1FC6EC009676D4 /* Helper+CustomFont.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		4212913E2C1FCB92009676D4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				423644302C1968B000AB0902 /* CaffeineEstimateApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4212913F2C1FCBAE009676D4 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				423644422C1982AC00AB0902 /* HealthManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		421291402C1FCBC6009676D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				423644322C1968B000AB0902 /* ContentView.swift */,
+				421291322C1FC333009676D4 /* SplashView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		423644242C1968B000AB0902 = {
 			isa = PBXGroup;
 			children = (
@@ -57,10 +119,11 @@
 			children = (
 				423644412C197FDD00AB0902 /* CaffeineEstimate.entitlements */,
 				423644402C197E2200AB0902 /* Info.plist */,
-				423644302C1968B000AB0902 /* CaffeineEstimateApp.swift */,
-				423644322C1968B000AB0902 /* ContentView.swift */,
-				423644422C1982AC00AB0902 /* HealthManager.swift */,
-				423644342C1968B100AB0902 /* Assets.xcassets */,
+				4212913E2C1FCB92009676D4 /* App */,
+				4212913F2C1FCBAE009676D4 /* Manager */,
+				421291402C1FCBC6009676D4 /* View */,
+				421291392C1FC6CC009676D4 /* Helper */,
+				421291342C1FC5BE009676D4 /* Resources */,
 				423644362C1968B100AB0902 /* Preview Content */,
 			);
 			path = CaffeineEstimate;
@@ -132,8 +195,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				421291442C1FD049009676D4 /* Colorsets.xcassets in Resources */,
+				421291492C1FD4AB009676D4 /* Cafe24Syongsyong-v2.0.ttf in Resources */,
 				423644382C1968B100AB0902 /* Preview Assets.xcassets in Resources */,
 				423644352C1968B100AB0902 /* Assets.xcassets in Resources */,
+				4212914B2C1FD55B009676D4 /* GrandifloraOne-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +211,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				423644332C1968B000AB0902 /* ContentView.swift in Sources */,
+				421291332C1FC333009676D4 /* SplashView.swift in Sources */,
+				4212913B2C1FC6EC009676D4 /* Helper+CustomFont.swift in Sources */,
 				423644432C1982AC00AB0902 /* HealthManager.swift in Sources */,
 				423644312C1968B000AB0902 /* CaffeineEstimateApp.swift in Sources */,
 			);
