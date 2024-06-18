@@ -28,30 +28,36 @@ struct AcademyView: View {
         let titles = ["NESPRESSO"]
         let data = [capsules]
         
-        List {
-            ForEach(data.indices, id: \.self) { index in
-                Section(header: Text(titles[index])) {
-                    ForEach(data[index].indices, id: \.self) { itemIndex in
-                        let item = data[index][itemIndex]
-                        DisclosureGroup(
-                            isExpanded: Binding(
-                                get: { expandedItems[item] ?? false },
-                                set: { expandedItems[item] = $0 }
-                            ),
-                            content: {
-                                capsuleDetail(image: capsuleImages[itemIndex], detail: capsuleDetails[itemIndex])
-                            },
-                            label: {
-                                Image(systemName: "circle.fill")
-                                    .foregroundColor(capsuleColors[itemIndex]) // 원하는 색상으로 변경
-                                Text(item)
+        ZStack{
+            VStack{
+                List {
+                    ForEach(data.indices, id: \.self) { index in
+                        Section(header: Text(titles[index])) {
+                            ForEach(data[index].indices, id: \.self) { itemIndex in
+                                let item = data[index][itemIndex]
+                                DisclosureGroup(
+                                    isExpanded: Binding(
+                                        get: { expandedItems[item] ?? false },
+                                        set: { expandedItems[item] = $0 }
+                                    ),
+                                    content: {
+                                        capsuleDetail(image: capsuleImages[itemIndex], detail: capsuleDetails[itemIndex])
+                                    },
+                                    label: {
+                                        Image(systemName: "circle.fill")
+                                            .foregroundColor(capsuleColors[itemIndex])
+                                        Text(item)
+                                    }
+                                )
                             }
-                        )
+                        }
                     }
                 }
+                .listStyle(SidebarListStyle())
+                .background(.background2)
+                .scrollContentBackground(.hidden)
             }
         }
-        .listStyle(SidebarListStyle())
     }
     
     @ViewBuilder
@@ -78,7 +84,7 @@ struct AcademyView: View {
                                 .fill(Color.brand)
                                 .frame(width: 72, height: 44)
                             Text("마시기")
-                                .font(.system(size: 16))
+                                .font(.system(size: 16, weight: .bold))
                                 .foregroundColor(.white)
                         }
                         .padding(8)
