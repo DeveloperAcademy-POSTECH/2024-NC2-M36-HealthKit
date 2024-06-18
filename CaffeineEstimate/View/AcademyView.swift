@@ -9,19 +9,23 @@ import SwiftUI
 
 struct AcademyView: View {
     
+    @Environment(NavigationPathModel.self) private var navigationPathModel
+    @EnvironmentObject var manager: HealthManager
+    
     @State private var expandedItems: [String: Bool] = [:]
     
     let capsules = ["피네조", "레제로", "포르테", "디카페나토", "리스트레토", "리스트레토 인텐소"]
     let capsuleColors = [Color.finezzo, Color.leggero, Color.forte, Color.decaffeinato, Color.ristretto, Color.ristrettoIntenso]
     let capsuleImages = ["finezzo", "leggero", "forte", "decaffeinato", "ristretto", "ristrettoIntenso"]
     let capsuleDetails = [
-        "섬세한 꽃향과 산뜻한 산미\n\n강도5, 에티오피아, 콜롬비아, 기타",
-        "벨벳 질감의 부드러운 곡물향과 코코아향\n\n강도6, 브라질, 콜롬비아, 기타",
-        "미디엄 로스팅된 맥아향과 과일향\n\n강도7, 브라질, 코스타리카, 기타",
-        "풍부한 바디감의 디카페인 커피\n\n강도7, 콜롬비아,브라질,기타",
-        "풍부한 바디감과 강한 로스팅향\n\n강도9, 중앙아메리카, 남아메리카",
-        "풍부한 바디감과 크리미한 질감\n\n강도12, 남아메리카"
+        "섬세한 꽃향과 산뜻한 산미\n\n강도5, 에티오피아, 콜롬비아, 기타\n카페인 함량: 50mg",
+        "벨벳 질감의 부드러운 곡물향과 코코아향\n\n강도6, 브라질, 콜롬비아, 기타\n카페인 함량: 60mg",
+        "미디엄 로스팅된 맥아향과 과일향\n\n강도7, 브라질, 코스타리카, 기타\n카페인 함량: 70mg",
+        "풍부한 바디감의 디카페인 커피\n\n강도7, 콜롬비아,브라질,기타\n카페인 함량: 2mg",
+        "풍부한 바디감과 강한 로스팅향\n\n강도9, 중앙아메리카, 남아메리카\n카페인 함량: 90mg",
+        "풍부한 바디감과 크리미한 질감\n\n강도12, 남아메리카\n카페인 함량: 120mg"
     ]
+    let capsuleCaffeines = [50.0, 60.0, 70.0, 2.0, 90.0, 120.0]
     
     var body: some View {
         
@@ -41,7 +45,7 @@ struct AcademyView: View {
                                         set: { expandedItems[item] = $0 }
                                     ),
                                     content: {
-                                        capsuleDetail(image: capsuleImages[itemIndex], detail: capsuleDetails[itemIndex])
+                                        capsuleDetail(image: capsuleImages[itemIndex], detail: capsuleDetails[itemIndex], amount: capsuleCaffeines[itemIndex])
                                     },
                                     label: {
                                         Image(systemName: "circle.fill")
@@ -61,7 +65,7 @@ struct AcademyView: View {
     }
     
     @ViewBuilder
-    private func capsuleDetail(image: String, detail: String) -> some View {
+    private func capsuleDetail(image: String, detail: String, amount: Double) -> some View {
         HStack{
             VStack{
                 Image(image)
@@ -76,6 +80,9 @@ struct AcademyView: View {
                 Button{
                     print("입력")
                     // 데이터 반영
+                    manager.saveCaffeine(caffeineAmount: amount)
+                    // 애니메이션 화면 구현
+                    navigationPathModel.paths.remove(at: 1)
                 } label: {
                     HStack{
                         Spacer()
