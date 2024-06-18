@@ -8,18 +8,30 @@
 import SwiftUI
 
 struct SplashView: View {
+    
+    @State private var navigationPathModel: NavigationPathModel = .init()
+    
     var body: some View {
-        ZStack{
-            // 배경색 지정
-            Color.background1.ignoresSafeArea()
-            
-            VStack {
-                Image("splashLogo")
+        NavigationStack(path: $navigationPathModel.paths) {
+            ZStack {
+                // 배경색 지정
+                Color.background1.ignoresSafeArea()
                 
-                Text("nearApple")
-                    .customFont(.Cafe24, 40)
+                VStack {
+                    Image("splashLogo")
+                    
+                    Text("nearApple")
+                        .customFont(.Cafe24, 40)
+                }
             }
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    navigationPathModel.paths.append(.homeView)
+                }
+            }
+            .navigationPathDestination()
         }
+        .environment(navigationPathModel)
     }
 }
 

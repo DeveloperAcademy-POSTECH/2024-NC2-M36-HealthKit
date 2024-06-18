@@ -14,6 +14,7 @@
 		4212914B2C1FD55B009676D4 /* GrandifloraOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4212914A2C1FD55B009676D4 /* GrandifloraOne-Regular.ttf */; };
 		4212914D2C1FDD4E009676D4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212914C2C1FDD4E009676D4 /* HomeView.swift */; };
 		421291552C21113C009676D4 /* AcademyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421291542C21113C009676D4 /* AcademyView.swift */; };
+		4212915A2C215CFC009676D4 /* NavigationPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421291592C215CFC009676D4 /* NavigationPath.swift */; };
 		423644312C1968B000AB0902 /* CaffeineEstimateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423644302C1968B000AB0902 /* CaffeineEstimateApp.swift */; };
 		423644332C1968B000AB0902 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423644322C1968B000AB0902 /* ContentView.swift */; };
 		423644352C1968B100AB0902 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 423644342C1968B100AB0902 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		4212914A2C1FD55B009676D4 /* GrandifloraOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GrandifloraOne-Regular.ttf"; sourceTree = "<group>"; };
 		4212914C2C1FDD4E009676D4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		421291542C21113C009676D4 /* AcademyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyView.swift; sourceTree = "<group>"; };
+		421291592C215CFC009676D4 /* NavigationPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPath.swift; sourceTree = "<group>"; };
 		4236442D2C1968B000AB0902 /* CaffeineEstimate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaffeineEstimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		423644302C1968B000AB0902 /* CaffeineEstimateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeineEstimateApp.swift; sourceTree = "<group>"; };
 		423644322C1968B000AB0902 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,8 +109,17 @@
 		4212914F2C1FE339009676D4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				421291582C215CEB009676D4 /* Path */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		421291582C215CEB009676D4 /* Path */ = {
+			isa = PBXGroup;
+			children = (
+				421291592C215CFC009676D4 /* NavigationPath.swift */,
+			);
+			path = Path;
 			sourceTree = "<group>";
 		};
 		423644242C1968B000AB0902 = {
@@ -224,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4212915A2C215CFC009676D4 /* NavigationPath.swift in Sources */,
 				421291552C21113C009676D4 /* AcademyView.swift in Sources */,
 				423644332C1968B000AB0902 /* ContentView.swift in Sources */,
 				421291332C1FC333009676D4 /* SplashView.swift in Sources */,

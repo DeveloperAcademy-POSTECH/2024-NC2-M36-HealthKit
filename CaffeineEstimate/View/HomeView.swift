@@ -9,20 +9,30 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @Environment(NavigationPathModel.self) private var navigationPathModel
     @EnvironmentObject var manager: HealthManager
     
     @State private var todayCaffeine: Int = 0
     
+    let comment = ["적당히\n즐기시는군요!", "오늘 하루도\n화이팅!", "일일 권장 섭취량을\n넘었습니다!!"]
+    
     var body: some View {
-        
         ZStack{
             Color.background2.ignoresSafeArea()
+            
             VStack{
+                
                 HStack{
-                    textComponent(text: "적당히\n즐기시는군요!", size: 28, weight: .bold)
-                        .padding(.init(top: 0, leading: 36, bottom: 20, trailing: 0))
+                    if todayCaffeine < 400 {
+                        textComponent(text: todayCaffeine < 200 ? comment[0] : comment[1], size: 28, weight: .bold)
+                    } else {
+                        textComponent(text: comment[2], size: 28, weight: .bold, color: .gage03)
+                    }
+                    
                     Spacer()
                 }
+                .padding(.init(top: 12, leading: 36, bottom: 20, trailing: 0))
+                
                 caffeineGage(caffeineMg: todayCaffeine, caffeinePercentage: todayCaffeine / 4)
                 
                 ZStack{
@@ -31,9 +41,10 @@ struct HomeView: View {
                         .ignoresSafeArea()
                     
                     VStack{
+                        
                         HStack{
                             textComponent(text: "어디서 드시나요?", size: 24, weight: .semibold)
-                                .padding(.init(top: 24, leading: 36, bottom: 0, trailing: 0))
+                                .padding(.init(top: 16, leading: 36, bottom: 0, trailing: 0))
                             Spacer()
                         }
                         
@@ -68,7 +79,7 @@ struct HomeView: View {
         ZStack{
             Circle()
                 .stroke(.gray.opacity(0.3), lineWidth: 20)
-                .shadow(color: .shadow.opacity(0.3), radius: 24, y: 8)
+                .shadow(color: .shadow, radius: 20, y: 8)
             
             if caffeineMg < 400{
                 Circle()
@@ -97,24 +108,24 @@ struct HomeView: View {
     }
     
     @ViewBuilder
-    private func textComponent(text: String, size: CGFloat, weight: Font.Weight) -> some View {
+    private func textComponent(text: String, size: CGFloat, weight: Font.Weight, color: Color = .text) -> some View {
         
         Text(text)
             .font(.system(size: size, weight: weight))
-            .foregroundColor(.text)
+            .foregroundColor(color)
     }
     
     @ViewBuilder
     private func positionButton(image: String, text: String) -> some View {
         
         Button{
-            // navigation 추가
+            navigationPathModel.paths.append(.academyView)
         } label: {
             ZStack{
                 RoundedRectangle(cornerRadius: 30)
                     .fill(Color.white)
                     .frame(width: 180, height: 220)
-                    .shadow(color: .gray, radius: 8, y: 8)
+                    .shadow(color: .gray.opacity(0.3), radius: 8, y: 8)
                 
                 VStack{
                     Image(image)
