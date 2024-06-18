@@ -82,7 +82,7 @@ struct AcademyView: View {
                     // 데이터 반영
                     manager.saveCaffeine(caffeineAmount: amount)
                     // 애니메이션 화면 구현
-                    navigationPathModel.paths.remove(at: 1)
+                    navigationPathModel.paths.append(.animationView)
                 } label: {
                     HStack{
                         Spacer()
