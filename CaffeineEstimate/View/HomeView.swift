@@ -1,5 +1,5 @@
 //
-//  homeView.swift
+//  HomeView.swift
 //  CaffeineEstimate
 //
 //  Created by Simmons on 6/17/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct homeView: View {
+struct HomeView: View {
     
     var body: some View {
         ZStack{
@@ -108,5 +108,5 @@ struct homeView: View {
 }
 
 #Preview {
-    homeView()
+    HomeView()
 }

@@ -1,0 +1,94 @@
+//
+//  AcademyView.swift
+//  CaffeineEstimate
+//
+//  Created by Simmons on 6/18/24.
+//
+
+import SwiftUI
+
+struct AcademyView: View {
+    
+    @State private var expandedItems: [String: Bool] = [:]
+    
+    let capsules = ["피네조", "레제로", "포르테", "디카페나토", "리스트레토", "리스트레토 인텐소"]
+    let capsuleColors = [Color.finezzo, Color.leggero, Color.forte, Color.decaffeinato, Color.ristretto, Color.ristrettoIntenso]
+    let capsuleImages = ["finezzo", "leggero", "forte", "decaffeinato", "ristretto", "ristrettoIntenso"]
+    let capsuleDetails = [
+        "섬세한 꽃향과 산뜻한 산미\n\n강도5, 에티오피아, 콜롬비아, 기타",
+        "벨벳 질감의 부드러운 곡물향과 코코아향\n\n강도6, 브라질, 콜롬비아, 기타",
+        "미디엄 로스팅된 맥아향과 과일향\n\n강도7, 브라질, 코스타리카, 기타",
+        "풍부한 바디감의 디카페인 커피\n\n강도7, 콜롬비아,브라질,기타",
+        "풍부한 바디감과 강한 로스팅향\n\n강도9, 중앙아메리카, 남아메리카",
+        "풍부한 바디감과 크리미한 질감\n\n강도12, 남아메리카"
+    ]
+    
+    var body: some View {
+        
+        let titles = ["NESPRESSO"]
+        let data = [capsules]
+        
+        List {
+            ForEach(data.indices, id: \.self) { index in
+                Section(header: Text(titles[index])) {
+                    ForEach(data[index].indices, id: \.self) { itemIndex in
+                        let item = data[index][itemIndex]
+                        DisclosureGroup(
+                            isExpanded: Binding(
+                                get: { expandedItems[item] ?? false },
+                                set: { expandedItems[item] = $0 }
+                            ),
+                            content: {
+                                capsuleDetail(image: capsuleImages[itemIndex], detail: capsuleDetails[itemIndex])
+                            },
+                            label: {
+                                Image(systemName: "circle.fill")
+                                    .foregroundColor(capsuleColors[itemIndex]) // 원하는 색상으로 변경
+                                Text(item)
+                            }
+                        )
+                    }
+                }
+            }
+        }
+        .listStyle(SidebarListStyle())
+    }
+    
+    @ViewBuilder
+    private func capsuleDetail(image: String, detail: String) -> some View {
+        HStack{
+            VStack{
+                Image(image)
+                    .padding(.top, 16)
+                Spacer()
+            }
+            VStack{
+                Text(detail)
+                    .font(.system(size: 16))
+                    .padding(.init(top: 8, leading: 8, bottom: 0, trailing: 0))
+                
+                Button{
+                    print("입력")
+                    // 데이터 반영
+                } label: {
+                    HStack{
+                        Spacer()
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 12)
+                                .fill(Color.brand)
+                                .frame(width: 72, height: 44)
+                            Text("마시기")
+                                .font(.system(size: 16))
+                                .foregroundColor(.white)
+                        }
+                        .padding(8)
+                    }
+                }
+            }
+        }
+    }
+}
+
+#Preview {
+    AcademyView()
+}
