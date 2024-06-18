@@ -9,7 +9,12 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @EnvironmentObject var manager: HealthManager
+    
+    @State private var todayCaffeine: Int = 0
+    
     var body: some View {
+        
         ZStack{
             Color.background2.ignoresSafeArea()
             VStack{
@@ -18,7 +23,7 @@ struct HomeView: View {
                         .padding(.init(top: 0, leading: 36, bottom: 20, trailing: 0))
                     Spacer()
                 }
-                caffeineGage()
+                caffeineGage(caffeineMg: todayCaffeine, caffeinePercentage: todayCaffeine / 4)
                 
                 ZStack{
                     RoundedRectangle(cornerRadius: 20)
@@ -48,25 +53,43 @@ struct HomeView: View {
                 
             }
         }
+        .onAppear {
+            manager.fetchTodayCaffeine{ caffeine in
+                if let caffeine = caffeine {
+                    todayCaffeine = caffeine
+                }
+            }
+        }
     }
     
     @ViewBuilder
-    private func caffeineGage() -> some View {
+    private func caffeineGage(caffeineMg: Int, caffeinePercentage: Int) -> some View {
+        
         ZStack{
             Circle()
                 .stroke(.gray.opacity(0.3), lineWidth: 20)
                 .shadow(color: .shadow.opacity(0.3), radius: 24, y: 8)
             
-            Circle()
-                .trim(from: 0, to: 32 / 100)
-                .stroke(Color.gage01, style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round))
-                .rotationEffect(.init(degrees: -90))
+            if caffeineMg < 400{
+                Circle()
+                    .trim(from: 0, to: CGFloat(caffeinePercentage) / 100)
+                    .stroke(caffeineMg < 200 ? .gage01 : .gage02, style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round))
+                    .rotationEffect(.init(degrees: -90))
+            } else {
+                Circle()
+                    .trim(from: 0, to: 100)
+                    .stroke(.gage03, style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round))
+                    .rotationEffect(.init(degrees: -90))
+            }
             
             VStack{
-                Text("32%")
+                Text("\(caffeinePercentage)%")
                     .font(.system(size: 60, weight: .bold))
-                Text("(128/400mg)")
+                    .foregroundColor(caffeineMg < 400 ? .black : .gage03)
+                
+                Text("(\(caffeineMg)/400mg)")
                     .font(.system(size: 32, weight: .bold))
+                    .foregroundColor(caffeineMg < 400 ? .black : .gage03)
             }
         }
         .frame(width: 300, height: 300)
@@ -75,6 +98,7 @@ struct HomeView: View {
     
     @ViewBuilder
     private func textComponent(text: String, size: CGFloat, weight: Font.Weight) -> some View {
+        
         Text(text)
             .font(.system(size: size, weight: weight))
             .foregroundColor(.text)
@@ -82,8 +106,9 @@ struct HomeView: View {
     
     @ViewBuilder
     private func positionButton(image: String, text: String) -> some View {
+        
         Button{
-            
+            // navigation 추가
         } label: {
             ZStack{
                 RoundedRectangle(cornerRadius: 30)
@@ -105,8 +130,4 @@ struct HomeView: View {
             }
         }
     }
-}
-
-#Preview {
-    HomeView()
 }

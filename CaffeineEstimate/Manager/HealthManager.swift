@@ -29,21 +29,25 @@ class HealthManager: ObservableObject {
         }
     }
     
-    func fetchTodayCaffeine() {
+    func fetchTodayCaffeine(completion: @escaping (Int?) -> Void) {
         let caffeines = HKQuantityType(.dietaryCaffeine)
         let predicate = HKQuery.predicateForSamples(withStart: .startOfDay, end: Date())
         
         let query = HKStatisticsQuery(quantityType: caffeines, quantitySamplePredicate: predicate) { _, result, error in
             guard let quantity = result?.sumQuantity(), error == nil else {
                 print("error fetching today step data") // 데이터 요청 실패 시 에러 메세지 출력
+                completion(nil)
                 return
             }
             // 카페인 함량 mg 데이터 변환
             let caffeine = quantity.doubleValue(for: HKUnit.gramUnit(with: .milli))
-            print(caffeine) // 카페인 함량 출력
+            print(type(of: caffeine)) // 카페인 함량 출력
+            completion(Int(caffeine))
         }
         
         healthStore.execute(query) // 쿼리 실행
+        
+        
     }
     
     func fetchTodaySteps() {

@@ -19,7 +19,7 @@ struct ContentView: View {
             
             Button{
 //                manager.fetchTodaySteps()
-                manager.fetchTodayCaffeine()
+//                manager.fetchTodayCaffeine()
 //                manager.fetchWeekSteps()
 //                manager.fetchAllSteps()
             } label: {
