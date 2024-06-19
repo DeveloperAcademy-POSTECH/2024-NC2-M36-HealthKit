@@ -78,10 +78,7 @@ struct AcademyView: View {
                     .padding(.init(top: 8, leading: 8, bottom: 0, trailing: 0))
                 
                 Button{
-                    print("입력")
-                    // 데이터 반영
                     manager.saveCaffeine(caffeineAmount: amount)
-                    // 애니메이션 화면 구현
                     navigationPathModel.paths.append(.animationView)
                 } label: {
                     HStack{
