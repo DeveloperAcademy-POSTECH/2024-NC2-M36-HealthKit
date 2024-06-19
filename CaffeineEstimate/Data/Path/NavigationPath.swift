@@ -26,7 +26,7 @@ private struct NavigationPathDestination: ViewModifier {
         content
             .navigationDestination(for: NavigationPathType.self) { path in
                 switch path {
-                case .academyView: AcademyView()
+                case .academyView: AcademyView().navigationTitle("Academy")
                 case .animationView: AnimationView().navigationBarBackButtonHidden()
                 }
             }

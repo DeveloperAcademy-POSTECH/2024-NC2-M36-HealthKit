@@ -44,7 +44,7 @@ struct HomeView: View {
                         VStack{
                             
                             HStack{
-                                textComponent(text: "어디서 드시나요?", size: 24, weight: .semibold)
+                                textComponent(text: "어디서 드시나요?", size: 20, weight: .semibold)
                                     .padding(.init(top: 16, leading: 36, bottom: 0, trailing: 0))
                                 Spacer()
                             }
