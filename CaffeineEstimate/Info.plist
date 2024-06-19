@@ -7,10 +7,6 @@
 		<string>GrandifloraOne-Regular.ttf</string>
 		<string>Cafe24Syongsyong-v2.0.ttf</string>
 	</array>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>Please allow access to enjoy all the features of our application</string>
-	<key>NSHealthShareUsageDescription</key>
-	<string>Please allow access to enjoy all the features of our application</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

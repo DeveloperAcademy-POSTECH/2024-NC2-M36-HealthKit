@@ -8,7 +8,6 @@
 import SwiftUI
 
 enum NavigationPathType {
-    case homeView
     case academyView
     case animationView
 }
@@ -27,7 +26,6 @@ private struct NavigationPathDestination: ViewModifier {
         content
             .navigationDestination(for: NavigationPathType.self) { path in
                 switch path {
-                case .homeView: HomeView().navigationBarBackButtonHidden()
                 case .academyView: AcademyView()
                 case .animationView: AnimationView().navigationBarBackButtonHidden()
                 }

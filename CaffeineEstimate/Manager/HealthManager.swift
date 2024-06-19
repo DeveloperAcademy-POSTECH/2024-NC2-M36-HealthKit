@@ -31,24 +31,6 @@ class HealthManager: ObservableObject {
         }
     }
     
-//    func requestAuthorization(completion: @escaping (Bool, Error?) -> Void) {
-//        // 카페인 데이터 타입 정의
-//        let caffeineType = HKQuantityType(.dietaryCaffeine)
-//        // 읽기/쓰기 권한을 요청할 HealthKit 데이터 타입 집합
-//        let healthTypesToRead: Set = [caffeineType]
-//        let healthTypesToShare: Set = [caffeineType]
-//
-//        // 비동기적으로 HealthKit 데이터 접근 권한 요청
-//        healthStore.requestAuthorization(toShare: healthTypesToShare, read: healthTypesToRead) { success, error in
-//            if success {
-//                print("Health data access granted")
-//            } else {
-//                print("Health data access denied")
-//            }
-//            completion(success, error)
-//        }
-//    }
-    
     func fetchTodayCaffeine(completion: @escaping (Int?) -> Void) {
         // 카페인 데이터 타입 정의
         let caffeineType = HKQuantityType(.dietaryCaffeine)

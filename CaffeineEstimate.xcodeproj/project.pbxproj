@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		421291332C1FC333009676D4 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421291322C1FC333009676D4 /* SplashView.swift */; };
 		4212913B2C1FC6EC009676D4 /* Helper+CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212913A2C1FC6EC009676D4 /* Helper+CustomFont.swift */; };
 		421291442C1FD049009676D4 /* Colorsets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 421291432C1FD049009676D4 /* Colorsets.xcassets */; };
 		421291492C1FD4AB009676D4 /* Cafe24Syongsyong-v2.0.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 421291482C1FD4AB009676D4 /* Cafe24Syongsyong-v2.0.ttf */; };
@@ -16,6 +15,7 @@
 		421291552C21113C009676D4 /* AcademyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421291542C21113C009676D4 /* AcademyView.swift */; };
 		4212915A2C215CFC009676D4 /* NavigationPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421291592C215CFC009676D4 /* NavigationPath.swift */; };
 		4212915C2C21B88E009676D4 /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212915B2C21B88E009676D4 /* AnimationView.swift */; };
+		422DB5382C22805200B30628 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422DB5372C22805200B30628 /* Launch Screen.storyboard */; };
 		423644312C1968B000AB0902 /* CaffeineEstimateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423644302C1968B000AB0902 /* CaffeineEstimateApp.swift */; };
 		423644332C1968B000AB0902 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423644322C1968B000AB0902 /* ContentView.swift */; };
 		423644352C1968B100AB0902 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 423644342C1968B100AB0902 /* Assets.xcassets */; };
@@ -24,7 +24,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		421291322C1FC333009676D4 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		4212913A2C1FC6EC009676D4 /* Helper+CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+CustomFont.swift"; sourceTree = "<group>"; };
 		421291432C1FD049009676D4 /* Colorsets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colorsets.xcassets; sourceTree = "<group>"; };
 		421291482C1FD4AB009676D4 /* Cafe24Syongsyong-v2.0.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cafe24Syongsyong-v2.0.ttf"; sourceTree = "<group>"; };
@@ -33,6 +32,7 @@
 		421291542C21113C009676D4 /* AcademyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyView.swift; sourceTree = "<group>"; };
 		421291592C215CFC009676D4 /* NavigationPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPath.swift; sourceTree = "<group>"; };
 		4212915B2C21B88E009676D4 /* AnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
+		422DB5372C22805200B30628 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4236442D2C1968B000AB0902 /* CaffeineEstimate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaffeineEstimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		423644302C1968B000AB0902 /* CaffeineEstimateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeineEstimateApp.swift; sourceTree = "<group>"; };
 		423644322C1968B000AB0902 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				423644322C1968B000AB0902 /* ContentView.swift */,
-				421291322C1FC333009676D4 /* SplashView.swift */,
 				4212914C2C1FDD4E009676D4 /* HomeView.swift */,
 				421291542C21113C009676D4 /* AcademyView.swift */,
 				4212915B2C21B88E009676D4 /* AnimationView.swift */,
@@ -153,6 +152,7 @@
 				421291392C1FC6CC009676D4 /* Helper */,
 				421291342C1FC5BE009676D4 /* Resources */,
 				423644362C1968B100AB0902 /* Preview Content */,
+				422DB5372C22805200B30628 /* Launch Screen.storyboard */,
 			);
 			path = CaffeineEstimate;
 			sourceTree = "<group>";
@@ -223,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				422DB5382C22805200B30628 /* Launch Screen.storyboard in Resources */,
 				421291442C1FD049009676D4 /* Colorsets.xcassets in Resources */,
 				421291492C1FD4AB009676D4 /* Cafe24Syongsyong-v2.0.ttf in Resources */,
 				423644382C1968B100AB0902 /* Preview Assets.xcassets in Resources */,
@@ -241,7 +242,6 @@
 				4212915A2C215CFC009676D4 /* NavigationPath.swift in Sources */,
 				421291552C21113C009676D4 /* AcademyView.swift in Sources */,
 				423644332C1968B000AB0902 /* ContentView.swift in Sources */,
-				421291332C1FC333009676D4 /* SplashView.swift in Sources */,
 				4212913B2C1FC6EC009676D4 /* Helper+CustomFont.swift in Sources */,
 				423644432C1982AC00AB0902 /* HealthManager.swift in Sources */,
 				4212915C2C21B88E009676D4 /* AnimationView.swift in Sources */,
@@ -385,9 +385,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CaffeineEstimate/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please allow access to enjoy all the features of our application";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please allow access to enjoy all the features of our application";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -416,9 +418,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CaffeineEstimate/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please allow access to enjoy all the features of our application";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please allow access to enjoy all the features of our application";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

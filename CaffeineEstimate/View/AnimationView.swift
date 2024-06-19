@@ -45,7 +45,7 @@ struct AnimationView: View {
                 }
                 
                 VStack{
-                    Image("splashLogo")
+                    Image("brandLogo")
                         .rotationEffect(Angle(degrees: isAngle ? 0 : -20))
                         .animation(.easeInOut(duration: 0.5), value: isAngle)
                 }
@@ -70,7 +70,7 @@ struct AnimationView: View {
                 isSteamMove2.toggle()
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
-                navigationPathModel.paths.removeLast(2)
+                navigationPathModel.paths.removeAll()
             }
         }
     }
