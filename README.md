@@ -63,4 +63,83 @@ NC2 오전 팀36 스파크없는 시몬스파크팀~!
 </p>
 
 ## 🛠️ About Code
-(핵심 코드에 대한 설명 추가)
+
+<pre>
+  <code>
+import HealthKit
+
+// HealthKit 데이터 저장소 초기화
+let healthStore = HKHealthStore()
+  </code>
+</pre>
+- HealthKit 프레임워크를 사용하여 HealthKit 데이터 저장소를 사용
+
+<pre>
+  <code>
+// 카페인 데이터 타입 정의
+let caffeineType = HKQuantityType(.dietaryCaffeine)
+// 읽기/쓰기 권한을 요청할 HealthKit 데이터 타입 집합
+let healthTypesToRead: Set = [caffeineType]
+let healthTypesToShare: Set = [caffeineType]
+
+// 비동기적으로 HealthKit 데이터 접근 권한 요청
+Task {
+    do {
+        try await healthStore.requestAuthorization(toShare: healthTypesToShare, read: healthTypesToRead)
+        // 여기에 스플래시 -> 홈 화면 넘어가는 거 구현
+    } catch {
+        print("error fetching health data") // 권한 요청 실패 시 에러 메세지 출력
+    }
+}
+  </code>
+</pre>
+- 카페인 타입(.dietaryCaffeine)을 지정하고 읽기/쓰기 권한을 요청할 데이터 집합 생성
+- HealthKit 데이터 저장소에 requestAuthorization으로 접근 권한을 요청(읽기/쓰기 전부)
+
+<pre>
+  <code>
+func fetchTodayCaffeine(completion: @escaping (Int?) -> Void) {
+    let caffeineType = HKQuantityType(.dietaryCaffeine)
+    let predicate = HKQuery.predicateForSamples(withStart: .startOfDay, end: Date())
+    
+    let query = HKStatisticsQuery(quantityType: caffeineType, quantitySamplePredicate: predicate) { _, result, error in
+        guard let quantity = result?.sumQuantity(), error == nil else {
+            print("error fetching today step data") // 데이터 요청 실패 시 에러 메세지 출력
+            completion(nil)
+            return
+        }
+        // 카페인 함량 mg 데이터 변환
+        let caffeine = quantity.doubleValue(for: HKUnit.gramUnit(with: .milli))
+        completion(Int(caffeine))
+    }
+    
+    healthStore.execute(query) // 쿼리 실행
+}
+  </code>
+</pre>
+- 일일 카페인 함량만 받아올 예정 → 시작 날짜와 종료 날짜를 정해(하루) 조건자(predicate)를 생성
+- 쿼리 수행으로 지정된 조건의 데이터를 반환
+
+<pre>
+  <code>
+func saveCaffeine(caffeineAmount: Double) {
+    // 카페인 데이터 타입 정의
+    let caffeineType = HKQuantityType(.dietaryCaffeine)
+    // 카페인 섭취량을 나타내는 HealthKit 수량 객체 생성
+    let caffeineQuantity = HKQuantity(unit: HKUnit.gramUnit(with: .milli), doubleValue: caffeineAmount)
+    // 샘플 생성
+    let caffeineSample = HKQuantitySample(type: caffeineType, quantity: caffeineQuantity, start: Date(), end: Date())
+    
+    // 데이터 저장
+    healthStore.save(caffeineSample) { success, error in
+        if let error = error {
+            print("Error saving caffeine intake: \(error.localizedDescription)")
+        } else {
+            print("Successfully saved caffeine intake.")
+        }
+    }
+}
+  </code>
+</pre>
+- 카페인 함량을 저장할 수 있는 샘플(카페인 단위, 저장하는 시간 등에 맞게)을 만들어
+  HealthKit 데이터에 .save로 저장
