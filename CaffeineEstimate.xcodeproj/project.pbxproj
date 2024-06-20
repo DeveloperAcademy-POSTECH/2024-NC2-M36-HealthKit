@@ -18,7 +18,6 @@
 		422DB5382C22805200B30628 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422DB5372C22805200B30628 /* Launch Screen.storyboard */; };
 		422DB53B2C22B61900B30628 /* Capsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DB53A2C22B61900B30628 /* Capsule.swift */; };
 		423644312C1968B000AB0902 /* CaffeineEstimateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423644302C1968B000AB0902 /* CaffeineEstimateApp.swift */; };
-		423644332C1968B000AB0902 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423644322C1968B000AB0902 /* ContentView.swift */; };
 		423644352C1968B100AB0902 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 423644342C1968B100AB0902 /* Assets.xcassets */; };
 		423644382C1968B100AB0902 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 423644372C1968B100AB0902 /* Preview Assets.xcassets */; };
 		423644432C1982AC00AB0902 /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423644422C1982AC00AB0902 /* HealthManager.swift */; };
@@ -37,7 +36,6 @@
 		422DB53A2C22B61900B30628 /* Capsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capsule.swift; sourceTree = "<group>"; };
 		4236442D2C1968B000AB0902 /* CaffeineEstimate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaffeineEstimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		423644302C1968B000AB0902 /* CaffeineEstimateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeineEstimateApp.swift; sourceTree = "<group>"; };
-		423644322C1968B000AB0902 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		423644342C1968B100AB0902 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		423644372C1968B100AB0902 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		423644402C197E2200AB0902 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 		421291402C1FCBC6009676D4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				423644322C1968B000AB0902 /* ContentView.swift */,
 				4212914C2C1FDD4E009676D4 /* HomeView.swift */,
 				421291542C21113C009676D4 /* AcademyView.swift */,
 				4212915B2C21B88E009676D4 /* AnimationView.swift */,
@@ -253,7 +250,6 @@
 				4212915A2C215CFC009676D4 /* NavigationPath.swift in Sources */,
 				421291552C21113C009676D4 /* AcademyView.swift in Sources */,
 				422DB53B2C22B61900B30628 /* Capsule.swift in Sources */,
-				423644332C1968B000AB0902 /* ContentView.swift in Sources */,
 				4212913B2C1FC6EC009676D4 /* Helper+CustomFont.swift in Sources */,
 				423644432C1982AC00AB0902 /* HealthManager.swift in Sources */,
 				4212915C2C21B88E009676D4 /* AnimationView.swift in Sources */,

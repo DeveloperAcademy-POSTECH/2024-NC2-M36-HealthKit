@@ -82,7 +82,7 @@ struct HomeView: View {
         ZStack{
             Circle()
                 .stroke(.gray.opacity(0.3), lineWidth: 20)
-                .shadow(color: .shadow, radius: 20, y: 8)
+                .shadow(color: .shadow.opacity(0.6), radius: 20, y: 8)
             
                 Circle()
                     .trim(from: 0, to: min(CGFloat(caffeinePercentage) / 100, 100))
@@ -129,6 +129,7 @@ struct HomeView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 100, height: 100)
+                        .opacity(0.7)
                         .padding(.bottom, 12)
                     
                     Text(text)

@@ -16,7 +16,7 @@ class HealthManager: ObservableObject {
     init() {
         // 카페인 데이터 타입 정의
         let caffeineType = HKQuantityType(.dietaryCaffeine)
-        // 읽기 권한을 요청할 HealthKit 데이터 타입 집합
+        // 읽기/쓰기 권한을 요청할 HealthKit 데이터 타입 집합
         let healthTypesToRead: Set = [caffeineType]
         let healthTypesToShare: Set = [caffeineType]
         
@@ -49,7 +49,6 @@ class HealthManager: ObservableObject {
             }
             // 카페인 함량 mg 데이터 변환
             let caffeine = quantity.doubleValue(for: HKUnit.gramUnit(with: .milli))
-            print(type(of: caffeine)) // 카페인 함량 출력
             completion(Int(caffeine))
         }
         
