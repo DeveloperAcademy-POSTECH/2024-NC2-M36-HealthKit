@@ -59,7 +59,7 @@ NC2 오전 팀36 스파크없는 시몬스파크팀~!
 <p align="center">
   <img src="https://github.com/DeveloperAcademy-POSTECH/2024-NC2-M36-HealthKit/assets/102645399/c3be3b7c-81be-48f4-8a04-fa484571e7e8" width="196.5" height="426">
   <img src="https://github.com/DeveloperAcademy-POSTECH/2024-NC2-M36-HealthKit/assets/102645399/2af9f383-23a9-45f5-bae4-7ef4ba9de297" width="196.5" height="426">
-  <img src="https://github.com/DeveloperAcademy-POSTECH/2024-NC2-M36-HealthKit/assets/102645399/a0af1dff-3973-4f6e-94fb-078dd7f483bd" width="196.5" height="426">
+  <img src="https://github.com/DeveloperAcademy-POSTECH/2024-NC2-M36-HealthKit/assets/102645399/134143a7-b52d-4dda-91c0-06538a522156" width="196.5" height="426">
 </p>
 
 ## 🛠️ About Code
